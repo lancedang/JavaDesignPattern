@@ -9,7 +9,7 @@ public class ShapeFactory {
 
 	public static Shape getShape(String type) {
 		switch (type) {
-		case "Retangle":
+		case "Rectangle":
 			return new Retangle();
 		case "Circle":
 			return new Circle();

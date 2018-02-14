@@ -6,7 +6,7 @@ public class Retangle implements Shape {
 
 	public void showShpe() {
 		// TODO Auto-generated method stub
-		System.out.println("I'am Retangle");;
+		System.out.println("I'am Rectangle");;
 	}
 
 }
