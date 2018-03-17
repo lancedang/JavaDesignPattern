@@ -1,5 +1,8 @@
 package designPattern.agent.staticc;
 
+/**
+ * 小贩
+ */
 public class Vendor implements ISell{
 
 	@Override
