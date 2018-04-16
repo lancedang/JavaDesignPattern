@@ -1,4 +1,4 @@
-package designPattern.strategy;
+package designPattern.strategy.showinfo;
 
 /**
  * Created by Dangdang on 2018/4/14.
