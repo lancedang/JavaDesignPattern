@@ -13,8 +13,19 @@ package designPattern.decorator;
  */
 public class DecoratorDemo {
     public static void main(String[] args) {
-        ISayable china = new ChinaPeople();
-        ChinaPeopleDecorator chinaPeopleDecorator = new ChinaPeopleDecorator(china);
-        chinaPeopleDecorator.say();
+        //纯洁无污染的被修饰对象
+        IShape circle = new Circle();
+        //用具体修饰类来修饰circle
+        //从这可以看出，可以任意添加具体修饰类来达到修饰目的
+        IShape redCircle = new RedShapeDecorator(circle);
+
+        IShape rectangle = new Rectangle();
+        IShape redRectangle = new RedShapeDecorator(rectangle);
+
+        circle.draw();
+        System.out.println(".............");
+        redCircle.draw();
+        System.out.println(".............");
+        redRectangle.draw();
     }
 }
