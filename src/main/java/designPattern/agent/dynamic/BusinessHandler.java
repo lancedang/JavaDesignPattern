@@ -18,14 +18,15 @@ public class BusinessHandler implements InvocationHandler {
     // 因为此刻不知道委托类具体是谁，故不能明确定义成Vendor,由多态可知，定义成Object
 
     public BusinessHandler(Object vendor) {
-        // TODO Auto-generated constructor stub
         this.vendor = vendor;
     }
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        // TODO Auto-generated method stub
         System.out.println("before");
+
+        //借此，可看到，我们不管目的真实类/被代理类到底有多少个（成千上万个）方法，都无所谓
+        //我们只需要在此加上前后的增强日志逻辑即可，（如此所有方法1w个都会加上日志增强）
         Object result = method.invoke(vendor, args); // 直观上理解，method.invoke()就是执行Method方法，
         // 这个方法隶属vendor类(param1)代理模式种的委托类，且这个方法所需参数为param2
         System.out.println("after");

@@ -13,7 +13,7 @@ import java.lang.reflect.UndeclaredThrowableException;
  * @author Dangdang
  *
  */
-public class MyProxy extends Proxy implements ISell {
+public class MyDyProxy extends Proxy implements ISell {
 
 	private static Method M1;
 	private static Method M2;
@@ -35,40 +35,32 @@ public class MyProxy extends Proxy implements ISell {
 			M5 = Class.forName("designPattern.agent.dynamic.ISell").getMethod("ad", new Class[] {});
 
 		} catch (NoSuchMethodException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (SecurityException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
-	protected MyProxy(InvocationHandler h) {
+	protected MyDyProxy(InvocationHandler h) {
 		super(h);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void sell() {
-		// TODO Auto-generated method stub
 		try {
 			this.h.invoke(this, M4, new Object[] {});
 		} catch (Throwable e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
 	@Override
 	public void advertise() {
-		// TODO Auto-generated method stub
 		try {
 			this.h.invoke(this, M5, new Object[] {});
 		} catch (Throwable e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -87,7 +79,6 @@ public class MyProxy extends Proxy implements ISell {
 		try {
 			return (boolean) this.h.invoke(this, M1, new Object[] {});
 		} catch (Throwable e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			throw new UndeclaredThrowableException(e);
 		}
@@ -97,7 +88,6 @@ public class MyProxy extends Proxy implements ISell {
 		try {
 			return (String)this.h.invoke(this, M3, new Object[] {});
 		} catch (Throwable e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			throw new UndeclaredThrowableException(e);
 		}
